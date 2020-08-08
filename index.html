@@ -17,42 +17,42 @@
     <ul class="user" id="user">
     </ul>
   </div>
-<script>
-function addPeople(){
-const newDiv=document.createElement('div')
-user.appendChild(newDiv)
-  const newLi=document.createElement('LI')
-  newLi.textContent=text_writing_part.value
-  newDiv.appendChild(newLi)
-  text_writing_part.value=''
-  const newButton=document.createElement('BUTTON')
-  newDiv.appendChild(newButton)
-  newButton.onclick=function(){
-    newLi.remove()
-    newButton.remove()
-    newDiv.remove()
-  }
-  
-}
-addButton.onclick=addPeople
-text_writing_part.onkeyup=function(event){
-  if (event.keyCode === 13) {
-    const newDiv=document.createElement('div')
-user.appendChild(newDiv)
-    const newLi=document.createElement('LI')
-  newLi.textContent=text_writing_part.value
-  newDiv.appendChild(newLi)
-  text_writing_part.value=''
-  const newButton=document.createElement('BUTTON')
-  newDiv.appendChild(newButton)
-  newButton.onclick=function(){
-    newLi.remove()
-    newButton.remove()
-    newDiv.remove()}
-  }}
-
-  
-</script>  
-
-</body>
-</html>
+  <script>
+    function addPeople(){if(text_writing_part.value.length>3)
+      {const newDiv=document.createElement('div')
+      user.appendChild(newDiv)
+      const newLi=document.createElement('LI')
+      newLi.textContent=text_writing_part.value
+      newDiv.appendChild(newLi)
+      text_writing_part.value=''
+      const newButton=document.createElement('BUTTON')
+      newDiv.appendChild(newButton)
+      newButton.onclick=function(){
+        newLi.remove()
+        newButton.remove()
+        newDiv.remove()
+      }}
+      
+    }
+    addButton.onclick=addPeople
+    text_writing_part.onkeyup=function(event){
+      if (event.keyCode === 13 && text_writing_part.value.length>3 ) {
+        const newDiv=document.createElement('div')
+        user.appendChild(newDiv)
+        const newLi=document.createElement('LI')
+        newLi.textContent=text_writing_part.value
+        newDiv.appendChild(newLi)
+        text_writing_part.value=''
+        const newButton=document.createElement('BUTTON')
+        newDiv.appendChild(newButton)
+        newButton.onclick=function(){
+          newLi.remove()
+          newButton.remove()
+          newDiv.remove()}
+        }}
+        
+        
+      </script>  
+      
+    </body>
+    </html>
