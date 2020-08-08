@@ -9,10 +9,10 @@
 </head>
 <body>
   <div class="container">
-    <form class="div_text">
+    <div class="div_text">
       <input class="place_for_writing" type="text" autocomplete="off"  placeholder="Write a name of man or woman" id="text_writing_part">
       <button id="addButton" class="add_button"><img src="images_add_or_delete_word_with_button/user-plus.svg"  width="32" height="32" alt="add_people"></button>
-    </form>
+    </div>
     <!-- ul_part -->
     <ul class="user" id="user">
     </ul>
@@ -27,7 +27,7 @@ user.appendChild(newDiv)
   text_writing_part.value=''
   const newButton=document.createElement('BUTTON')
   newDiv.appendChild(newButton)
-  newButton .onclick=function(){
+  newButton.onclick=function(){
     newLi.remove()
     newButton.remove()
     newDiv.remove()
@@ -45,8 +45,12 @@ user.appendChild(newDiv)
   text_writing_part.value=''
   const newButton=document.createElement('BUTTON')
   newDiv.appendChild(newButton)
+  newButton.onclick=function(){
+    newLi.remove()
+    newButton.remove()
+    newDiv.remove()}
   }}
- 
+
   
 </script>  
 
