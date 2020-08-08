@@ -8,6 +8,47 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="text" placeholder="Write a name of " id="text_writing_part">
+  <div class="container">
+    <form class="div_text">
+      <input class="place_for_writing" type="text" autocomplete="off"  placeholder="Write a name of man or woman" id="text_writing_part">
+      <button id="addButton" class="add_button"><img src="images_add_or_delete_word_with_button/user-plus.svg"  width="32" height="32" alt="add_people"></button>
+    </form>
+    <!-- ul_part -->
+    <ul class="user" id="user">
+    </ul>
+  </div>
+<script>
+function addPeople(){
+const newDiv=document.createElement('div')
+user.appendChild(newDiv)
+  const newLi=document.createElement('LI')
+  newLi.textContent=text_writing_part.value
+  newDiv.appendChild(newLi)
+  text_writing_part.value=''
+  const newButton=document.createElement('BUTTON')
+  newDiv.appendChild(newButton)
+  newButton .onclick=function(){
+    newLi.remove()
+    newButton.remove()
+    newDiv.remove()
+  }
+  
+}
+addButton.onclick=addPeople
+text_writing_part.onkeyup=function(event){
+  if (event.keyCode === 13) {
+    const newDiv=document.createElement('div')
+user.appendChild(newDiv)
+    const newLi=document.createElement('LI')
+  newLi.textContent=text_writing_part.value
+  newDiv.appendChild(newLi)
+  text_writing_part.value=''
+  const newButton=document.createElement('BUTTON')
+  newDiv.appendChild(newButton)
+  }}
+ 
+  
+</script>  
+
 </body>
 </html>
