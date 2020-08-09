@@ -31,7 +31,6 @@ text_writing_part.onkeyup=function(event){
       newDiv.remove()}
     }}
     //voiceButton
-    function record(){
    const rec = new webkitSpeechRecognition()
    rec.lang='uz-UZ'
    rec.onresult=function(event){
@@ -48,13 +47,12 @@ text_writing_part.onkeyup=function(event){
       newButton.remove()
       newDiv.remove()
     }}
-     
    }
-   
-   rec.start()}
-   voiceButton.onclick=record
-   window.onkeyup=record()
-  //  {if (event.keyCode === 32){
-  // console.log(record)
-  // }}
-  
+   voiceButton.onclick=function(){
+     rec.start()
+   }
+   window.onkeyup=function(event) {
+     if (event.keyCode === 32){
+    rec.start()
+  }
+   }  
