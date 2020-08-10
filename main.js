@@ -49,7 +49,7 @@ text_writing_part.onkeyup=function(event){
       newDiv.remove()
     }}
     //remove when word=sariq
-    if(event.results[0][0].transcript ==='olib tashlash'){
+    if(event.results[0][0].transcript ==='qizil'){
    /*  console.log (rec ) */ user.remove()
     }
    }
