@@ -34,7 +34,8 @@ text_writing_part.onkeyup=function(event){
    const rec = new webkitSpeechRecognition()
    rec.lang='uz-UZ'
    rec.onresult=function(event){
-    if(event.results[0][0].transcript.length>1)
+     
+    if(event.results[0][0].transcript.length>1 /* && event.results[0][0].transcript <> "sariq" */)
     {const newDiv=document.createElement('div')
     user.appendChild(newDiv)
     const newLi=document.createElement('LI')
@@ -47,10 +48,12 @@ text_writing_part.onkeyup=function(event){
       newButton.remove()
       newDiv.remove()
     }}
+    //remove when word=sariq
+    if(event.results[0][0].transcript ==='olib tashlash'){
+   /*  console.log (rec ) */ user.remove()
+    }
    }
-   voiceButton.onclick=function(){
-     rec.start()
-   }
+   voiceButton.onclick=rec
    window.onkeyup=function(event) {
      if (event.keyCode === 32){
     rec.start()
