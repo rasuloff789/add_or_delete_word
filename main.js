@@ -35,7 +35,7 @@ text_writing_part.onkeyup=function(event){
    rec.lang='uz-UZ'
    rec.onresult=function(event){
      
-    if(event.results[0][0].transcript.length>1 /* && event.results[0][0].transcript <> "sariq" */)
+    if(event.results[0][0].transcript.length>1)
     {const newDiv=document.createElement('div')
     user.appendChild(newDiv)
     const newLi=document.createElement('LI')
@@ -53,7 +53,9 @@ text_writing_part.onkeyup=function(event){
    /*  console.log (rec ) */ user.remove()
     }
    }
-   voiceButton.onclick=rec
+   voiceButton.onclick=function(){
+     rec.start()
+   }
    window.onkeyup=function(event) {
      if (event.keyCode === 32){
     rec.start()
